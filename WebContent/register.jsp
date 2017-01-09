@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="form">
-		<form action="check" method="post">
+		<form action="addUser" method="post">
 			<h2>Register</h2>
 			<table>
 				<tr>
@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="submit" value="Submit">
+						<input type="submit" value="Register">
 					</td>
 					<td>
 						<input type="reset" value="Reset">

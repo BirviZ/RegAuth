@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="form">
-		<form action="check" method="post">
+		<form action="checkUser" method="post">
 			<h2>Log In</h2>
 			<table>
 				<tr>

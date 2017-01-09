@@ -1,6 +1,7 @@
 package example.servlets;
 
 import example.classes.User;
+import example.classes.utils.Security;
 
 import java.io.IOException;
 
@@ -20,13 +21,14 @@ public class CheckServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws IOException, ServletException {
-		User user = new User(request.getParameter("name"), request.getParameter("password"));
+		User user = new User(request.getParameter("login"), Security.getMd5Hash(request.getParameter("password")));
+		System.out.println(user.getName());
 		
 		String forward;
 		if (user.isExist()) {
-			forward = "login.jsp";
+			forward = "/login.jsp";
 		} else {
-			forward = "register.jsp";
+			forward = "/register.jsp";
 		}
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(forward);

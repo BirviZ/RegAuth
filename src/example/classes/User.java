@@ -14,8 +14,8 @@ public class User {
 		return this.name;
 	}
 	
-	public String getPassword() {
-		return this.pass;
+	public boolean isPasswordCorrect(String hash) {
+		return this.pass.equals(hash);
 	}
 	
 	public boolean isExist() {
